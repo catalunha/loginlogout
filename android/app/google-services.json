@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "681416352223",
+    "project_id": "loginlogout1",
+    "storage_bucket": "loginlogout1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:681416352223:android:1de2ad8d1445e3f3c6246a",
+        "android_client_info": {
+          "package_name": "br.com.innube.login_logout"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "681416352223-494s5icned52m0mpikafb3lltkpi0ner.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.innube.login_logout",
+            "certificate_hash": "5837728061e8938c595f017df2ab59ee637c0836"
+          }
+        },
+        {
+          "client_id": "681416352223-k82grj94d0udm7s9aiaabe6megmv3e01.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA17CrxfMXCLU48IKrBNBCGthDifYGTz9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "681416352223-k82grj94d0udm7s9aiaabe6megmv3e01.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
