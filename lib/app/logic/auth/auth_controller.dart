@@ -28,6 +28,8 @@ class AuthController extends GetxController {
         Get.offNamed(Routes.login);
       } else {
         log('User is signed in!');
+        Get.offNamed(Routes.splash2);
+
         try {
           _userModel(await _userRepository.getByUid(user!.uid));
           log(_userModel.toString());

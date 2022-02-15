@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
             const Text('AUTH:', style: TextStyle(fontWeight: FontWeight.bold)),
             const Divider(),
             const Text('uid:', style: TextStyle(fontWeight: FontWeight.bold)),
-            Obx(() => Text(_controller.user.uid ?? '...')),
+            Obx(() => Text(_controller.user?.uid ?? '...')),
             const Text('email:', style: TextStyle(fontWeight: FontWeight.bold)),
             Obx(() => Text(_controller.user?.email ?? '...')),
             const Text('displayName:',
@@ -64,7 +64,7 @@ class HomePage extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold)),
             ClipRRect(
               borderRadius: BorderRadius.circular(20),
-              child: _controller.user?.photoURL == null
+              child: _controller.userModel?.photoURL == null
                   ? const Icon(Icons.person)
                   : Image.network(_controller.userModel!.photoURL!),
             ),
