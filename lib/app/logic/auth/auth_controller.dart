@@ -53,7 +53,7 @@ class AuthController extends GetxController {
             Get.offNamed(Routes.home);
           } on UserNotFoundException catch (e, s) {
             Get.snackbar(
-              'Erro.',
+              'Erro. ',
               'Novo usuario. Mas não encontrado. ${s.toString()}',
               snackPosition: SnackPosition.BOTTOM,
             );
@@ -105,7 +105,7 @@ class AuthController extends GetxController {
       return await _firebaseAuthInstance.signInWithCredential(credential);
     } catch (error) {
       Get.snackbar(
-        'Erro ao autenticar com conta do Google',
+        'Erro ao buscar conta do Google',
         error.toString(),
         snackPosition: SnackPosition.BOTTOM,
       );
@@ -116,5 +116,6 @@ class AuthController extends GetxController {
   void signOut() async {
     await _firebaseAuthInstance.signOut();
     await GoogleSignIn().signOut();
+    // await GoogleSignIn().disconnect();
   }
 }

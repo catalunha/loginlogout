@@ -1,3 +1,12 @@
+
+
+
+# web
+catalunha@pop-os:~/myapp/login_logout$ flutter run -d chrome --web-hostname localhost --web-port 7357
+
+
+# sha1
+
 catalunha@pop-os:~/development/android-studio/bin$ keytool -list -v -alias androiddebugkey -keystore ~/.android/debug.keystore
 Enter keystore password:  
 Alias name: androiddebugkey
