@@ -1,4 +1,12 @@
 
+Preparei um App base para compartilhar com todos. Apenas em:
+$ flutter create --platforms android,web ...
+O foco é refinarmos o código para login-logout com firebase Auth e Firestore.
+Esta funcionando tranquilo (antes dos ataques). 
+Pretendo passar o link do App e do código aqui **mas antes preciso revisar com vcs umas leituras e passar por algumas sabatinas aqui**.
+Se aqui é o lugar das dúvidas, vamos lá:
+
+1) Qual destas opções é mais 
 
 
 # web
@@ -27,3 +35,7 @@ Version: 1
 
 Warning:
 The certificate uses the SHA1withRSA signature algorithm which is considered a security risk. This algorithm will be disabled in a future update.
+
+# create
+
+flutter create --platforms android,web --org br.com.brintec --project-name login_logout ./login_logout

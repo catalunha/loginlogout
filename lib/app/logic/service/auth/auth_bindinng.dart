@@ -1,13 +1,12 @@
 import 'package:get/get.dart';
 import 'package:login_logout/app/data/repository/user_repository.dart';
-import 'package:login_logout/app/logic/auth/auth_controller.dart';
+import 'package:login_logout/app/logic/service/auth/auth_service.dart';
 
 class AuthBinding implements Bindings {
   @override
   void dependencies() {
     Get.put<UserRepository>(UserRepository());
-    Get.put<AuthController>(AuthController(userRepository: Get.find()),
-        permanent: true);
+    Get.put<AuthService>(AuthService(userRepository: Get.find()));
   }
 }
 

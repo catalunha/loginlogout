@@ -8,12 +8,20 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-          child: TextButton.icon(
-        icon: const Icon(Icons.login),
-        label: const Text('Login with Google'),
-        onPressed: () => _controller.signInWithGoogle(),
-      )),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        // crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const Text('Este App apenas testa login e logout'),
+          Center(
+            child: TextButton.icon(
+              icon: const Icon(Icons.login),
+              label: const Text('Selecione uma conta Google'),
+              onPressed: () => _controller.signInWithGoogle(),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

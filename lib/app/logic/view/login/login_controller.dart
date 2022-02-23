@@ -1,12 +1,12 @@
 import 'package:get/get.dart';
-import 'package:login_logout/app/logic/auth/auth_controller.dart';
+import 'package:login_logout/app/logic/service/auth/auth_service.dart';
 
 class LoginController extends GetxController {
-  final AuthController _authController;
-  LoginController({required AuthController authController})
-      : _authController = authController;
+  final AuthService _authService;
+  LoginController({required AuthService authService})
+      : _authService = authService;
 
-  signInWithGoogle() {
-    _authController.signInWithGoogle();
+  signInWithGoogle() async {
+    await _authService.signInWithGoogle();
   }
 }

@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:login_logout/app/data/exceptions/user_exceptions.dart';
@@ -8,9 +9,9 @@ import 'package:login_logout/app/data/model/user_model.dart';
 import 'package:login_logout/app/data/repository/user_repository.dart';
 import 'package:login_logout/app/routes.dart';
 
-class AuthController extends GetxController {
+class AuthService extends GetxService {
   final UserRepository _userRepository;
-  AuthController({required UserRepository userRepository})
+  AuthService({required UserRepository userRepository})
       : _userRepository = userRepository;
 
   final FirebaseAuth _firebaseAuthInstance = FirebaseAuth.instance;
@@ -18,17 +19,17 @@ class AuthController extends GetxController {
   User? get userFirebase => userFirebaseAuth.value;
   final Rx<UserModel> _userModel = UserModel(id: '', uid: '', email: '').obs;
   UserModel get userModel => _userModel.value;
-
+  var loggedInGoogle = false.obs;
   @override
   void onInit() {
     userFirebaseAuth.bindStream(_firebaseAuthInstance.authStateChanges());
     ever<User?>(userFirebaseAuth, (user) async {
+      log('User atualizado');
       if (userFirebaseAuth.value == null) {
         log('User is SIGNED OUT!');
         Get.offNamed(Routes.login);
       } else {
         log('User is signed in!');
-        Get.offNamed(Routes.splash2);
 
         try {
           _userModel(await _userRepository.getByUid(user!.uid));
@@ -88,21 +89,33 @@ class AuthController extends GetxController {
 
   Future<UserCredential?> signInWithGoogle() async {
     // UserCredential? userCredential;
+    late final GoogleSignInAccount? googleUser;
     try {
+      loggedInGoogle.value = true;
+      Get.offNamed(Routes.splash);
       // Trigger the authentication flow
-      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+      try {
+        googleUser = await GoogleSignIn().signIn();
+      } on PlatformException catch (err) {
+        log('Erro PlatformException: GoogleSignIn().signIn();');
+        log(err.code);
+      } catch (err) {
+        log('Erro catch: GoogleSignIn().signIn();');
+      }
 
-      // Obtain the auth details from the request
-      final GoogleSignInAuthentication? googleAuth =
-          await googleUser?.authentication;
+      if (googleUser != null) {
+        // Obtain the auth details from the request
+        final GoogleSignInAuthentication? googleAuth =
+            await googleUser.authentication;
 
-      // Create a new credential
-      final credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth?.accessToken,
-        idToken: googleAuth?.idToken,
-      );
-      // Once signed in, return the UserCredential
-      return await _firebaseAuthInstance.signInWithCredential(credential);
+        // Create a new credential
+        final credential = GoogleAuthProvider.credential(
+          accessToken: googleAuth?.accessToken,
+          idToken: googleAuth?.idToken,
+        );
+        // Once signed in, return the UserCredential
+        return await _firebaseAuthInstance.signInWithCredential(credential);
+      }
     } catch (error) {
       Get.snackbar(
         'Erro ao buscar conta do Google',
@@ -116,6 +129,5 @@ class AuthController extends GetxController {
   void signOut() async {
     await _firebaseAuthInstance.signOut();
     await GoogleSignIn().signOut();
-    // await GoogleSignIn().disconnect();
   }
 }

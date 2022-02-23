@@ -5,6 +5,6 @@ class LoginBinding implements Bindings {
   @override
   void dependencies() {
     Get.lazyPut<LoginController>(
-        () => LoginController(authController: Get.find()));
+        () => LoginController(authService: Get.find()));
   }
 }
