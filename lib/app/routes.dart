@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
-import 'package:login_logout/app/logic/service/auth/auth_bindinng.dart';
-import 'package:login_logout/app/logic/view/home/home_binding.dart';
-import 'package:login_logout/app/logic/view/login/login_binding.dart';
-import 'package:login_logout/app/view/auth/auth_page.dart';
-import 'package:login_logout/app/view/home/home_page.dart';
-import 'package:login_logout/app/view/login/login_page.dart';
+import 'package:login_logout/app/controllers/service/auth/auth_bindinng.dart';
+import 'package:login_logout/app/controllers/view/home/home_binding.dart';
+import 'package:login_logout/app/controllers/view/login/login_binding.dart';
+import 'package:login_logout/app/views/auth/auth_page.dart';
+import 'package:login_logout/app/views/home/home_page.dart';
+import 'package:login_logout/app/views/login/login_page.dart';
 
 class Routes {
   static const splash = '/';

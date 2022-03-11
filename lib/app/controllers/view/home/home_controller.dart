@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-import 'package:login_logout/app/data/model/user_model.dart';
-import 'package:login_logout/app/logic/service/auth/auth_service.dart';
+import 'package:login_logout/app/models/model/user_model.dart';
+import 'package:login_logout/app/controllers/service/auth/auth_service.dart';
 
 class HomeController extends GetxController {
   final AuthService _authService;

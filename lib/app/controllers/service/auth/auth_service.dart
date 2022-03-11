@@ -4,9 +4,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:login_logout/app/data/exceptions/user_exceptions.dart';
-import 'package:login_logout/app/data/model/user_model.dart';
-import 'package:login_logout/app/data/repository/user_repository.dart';
+import 'package:login_logout/app/models/exceptions/user_exceptions.dart';
+import 'package:login_logout/app/models/model/user_model.dart';
+import 'package:login_logout/app/models/repository/user_repository.dart';
 import 'package:login_logout/app/routes.dart';
 
 class AuthService extends GetxService {

@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:login_logout/app/data/repository/user_repository.dart';
-import 'package:login_logout/app/logic/service/auth/auth_service.dart';
+import 'package:login_logout/app/models/repository/user_repository.dart';
+import 'package:login_logout/app/controllers/service/auth/auth_service.dart';
 
 class AuthBinding implements Bindings {
   @override

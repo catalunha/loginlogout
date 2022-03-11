@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:login_logout/app/logic/service/auth/auth_service.dart';
+import 'package:login_logout/app/controllers/service/auth/auth_service.dart';
 
 class AuthPage extends StatelessWidget {
   final AuthService _authService = Get.find();

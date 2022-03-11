@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:login_logout/app/logic/view/home/home_controller.dart';
+import 'package:login_logout/app/controllers/view/home/home_controller.dart';
 
 class HomePage extends StatelessWidget {
   // final authController = Get.find<AuthController>();

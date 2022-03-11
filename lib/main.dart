@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
+import 'package:login_logout/app/controllers/auth/auth_bindinng.dart';
 import 'package:login_logout/app/routes.dart';
 import 'package:login_logout/firebase_options.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      initialBinding: AuthBinding2(),
       getPages: Routes.pageList,
       initialRoute: Routes.splash,
     );

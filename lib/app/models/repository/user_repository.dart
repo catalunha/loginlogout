@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
-import 'package:login_logout/app/data/exceptions/user_exceptions.dart';
-import 'package:login_logout/app/data/model/user_model.dart';
+import 'package:login_logout/app/models/exceptions/user_exceptions.dart';
+import 'package:login_logout/app/models/model/user_model.dart';
 
 class UserRepository extends GetxController {
   final FirebaseFirestore _firebaseFirestoreInstance =
