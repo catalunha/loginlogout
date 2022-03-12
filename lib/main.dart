@@ -1,11 +1,8 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
-import 'package:login_logout/app/controllers/auth/auth_bindinng.dart';
-import 'package:login_logout/app/routes.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:login_logout/firebase_options.dart';
-import 'package:google_sign_in/google_sign_in.dart';
+import 'package:get/get.dart';
+import 'package:login_logout/app/routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,11 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      initialBinding: AuthBinding2(),
+      title: 'Login',
       getPages: Routes.pageList,
       initialRoute: Routes.splash,
     );
