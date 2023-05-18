@@ -41,17 +41,17 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDE7qmD8KTlNg8bMawzevJF1vEvxZEFjz8',
-    appId: '1:681416352223:web:81993cbd42d5c05bc6246a',
-    messagingSenderId: '681416352223',
+    apiKey: '',
+    appId: '1:681416352223:web:',
+    messagingSenderId: '',
     projectId: 'loginlogout1',
     authDomain: 'loginlogout1.firebaseapp.com',
     storageBucket: 'loginlogout1.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyA17CrxfMXCLU48IKrBNBCGthDifYGTz9M',
-    appId: '1:681416352223:android:1de2ad8d1445e3f3c6246a',
+    apiKey: '',
+    appId: '1:681416352223:android:',
     messagingSenderId: '681416352223',
     projectId: 'loginlogout1',
     storageBucket: 'loginlogout1.appspot.com',
